@@ -23,5 +23,6 @@ object DataframeBasics extends java.io.Serializable {
     //df2.printSchema()
     // alias
     df2.select(df2("HighPlusLow").as("HPL")).show(5)
+    // new changes
   }
 }
