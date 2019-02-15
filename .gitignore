@@ -1,0 +1,27 @@
+### Scala template
+*.class
+*.log
+
+.idea/encodings.xml
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/modules/
+.idea/sbt.xml
+.idea/scala_compiler.xml
+.idea/workspace.xml
+project/build.properties
+project/target/config-classes/$363078ebd4b3cf21cc90.cache
+project/target/config-classes/$7382615fa78e6d599c19.cache
+project/target/config-classes/$864f9d8221e2ec7f7fc5.cache
+project/target/config-classes/$ab54b4802209dafa28f7.cache
+project/target/config-classes/$edce6b7bf3ee449380c0.cache
+project/target/config-classes/$faa5c6ac026f617cfe6c.cache
+project/target/scala-2.12/
+project/target/streams/
+spark-warehouse/
+src/test/
+target/.history
+target/scala-2.11/resolution-cache/
+target/scala-2.11/test-classes/
+target/streams/
