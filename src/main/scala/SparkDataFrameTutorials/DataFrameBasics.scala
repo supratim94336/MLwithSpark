@@ -1,8 +1,10 @@
-package SparkDataframeTutorials
+package SparkDataFrameTutorials
 import org.apache.spark.sql.SparkSession
 import org.apache.log4j._
+import org.apache.spark.sql.functions._
 
-object DataframeBasics extends java.io.Serializable {
+
+object DataFrameBasics extends java.io.Serializable {
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val spark = SparkSession.builder
@@ -23,6 +25,19 @@ object DataframeBasics extends java.io.Serializable {
     //df2.printSchema()
     // alias
     df2.select(df2("HighPlusLow").as("HPL")).show(5)
+
     // new changes
+    import spark.implicits._
+    // Scala syntax (Scala Dataframe) spark.implicits._
+    df.filter($"Close" < 480 && $"High" < 480).show(5)
+    // SQL syntax (Spark SQL Dataframe) org.apache.spark.sql.Dataframe
+    df.filter("Close < 480 AND High < 480").show(5)
+    // understanding ===
+    df.filter($"High" === 480).show(5)
+    // SQL syntax for the same
+    df.filter("High = 484.40").show()
+    // calculating correlation
+    df.select(corr("High","Low")).show()
+
   }
 }
