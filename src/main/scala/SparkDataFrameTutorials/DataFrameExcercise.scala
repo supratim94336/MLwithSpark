@@ -20,8 +20,9 @@ object DataFrameExcercise extends java.io.Serializable {
     df.describe()
     // print top 5 rows
     // all columns
-    println(df.columns.toString)
-    println(df.head(5).toString)
+    println(df.columns.toSeq) // or import scala.runtime.ScalaRunTime._ --> stringOf(df.columns)
+    // Column names and types
+    println(df.dtypes.toSeq)
     // New column
     df.withColumn("HV", col("High")/col("Volume")).show()
     // Peak of High Price

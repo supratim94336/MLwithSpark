@@ -40,10 +40,14 @@ object DataFrameBasics2 extends java.io.Serializable {
     val dfMain = df.as("dfMain")
 
     // experiment
-    val maxOfLot = df.groupBy("Company").max("Sales")
-                                              .select(col("Company"), col("max(Sales)").alias("SalesMax")).as("maxOfLot")
+    val maxOfLot = df.groupBy("Company")
+                     .max("Sales")
+                     .select(col("Company"), col("max(Sales)").alias("SalesMax"))
+                     .as("maxOfLot")
     maxOfLot.show()
-    val joinedDf = dfMain.join(maxOfLot, dfMain("Company") === maxOfLot("Company"), "inner").select("dfMain.Company","dfMain.Person", "dfMain.Sales", "maxOfLot.SalesMax").as("maxOfLot")
+    val joinedDf = dfMain.join(maxOfLot, dfMain("Company") === maxOfLot("Company"), "inner")
+                         .select("dfMain.Company","dfMain.Person", "dfMain.Sales", "maxOfLot.SalesMax")
+                         .as("maxOfLot")
     joinedDf.show()
 
     val parentChildDf = joinedDf.withColumn("Relation", when(col("Sales") === col("SalesMax"), "Parent").otherwise("Child"))
