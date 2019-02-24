@@ -1,4 +1,4 @@
-package SparkDataFrameTutorials
+package sparkdataframetutorials
 import org.apache.spark.sql.SparkSession
 import org.apache.log4j._
 import org.apache.spark.sql.functions._
@@ -8,9 +8,9 @@ object DataFrameBasics2 extends java.io.Serializable {
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val spark = SparkSession.builder
-      .appName("SparkSQL")
-      .master("local[*]")
-      .getOrCreate()
+                            .appName("DataFrameBasics2")
+                            .master("local[*]")
+                            .getOrCreate()
     val df = spark.read.option("header","true").option("InferSchema","true").csv("../MLwithSpark/Data/Sales.csv")
     // groupBy - mean/min/max/avg/count
     df.groupBy("Company").avg("Sales").show()
