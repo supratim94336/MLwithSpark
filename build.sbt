@@ -12,5 +12,6 @@ libraryDependencies ++= Seq(
   "org.apache.spark"  %% "spark-sql"       % sparkVersion,
   "org.apache.spark"  %% "spark-hive"      % sparkVersion,
   "org.apache.spark"  %% "spark-repl"      % sparkVersion,
-  "org.apache.spark"  %% "spark-ml"      % sparkVersion
+  "org.apache.spark"  %% "spark-ml"      % sparkVersion,
+  "com.github.fommil.netlib" % "all" % "1.1.2" pomOnly()
 )
