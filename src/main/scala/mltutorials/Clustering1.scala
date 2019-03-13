@@ -3,7 +3,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.log4j._
 import org.apache.spark.ml.clustering.KMeans
 
-object Clustering1 {
+object Clustering1 extends java.io.Serializable {
   def main(args: Array[String]): Unit = {
     // global parameters
     Logger.getLogger("org").setLevel(Level.ERROR)

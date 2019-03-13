@@ -7,7 +7,7 @@ import org.apache.spark.ml.regression.LinearRegression
 import org.apache.spark.ml.tuning.{ParamGridBuilder, TrainValidationSplit}
 import org.apache.spark.sql.SparkSession
 
-object ModelEvaluationRegression2 {
+object ModelEvaluationRegression2 extends java.io.Serializable {
   def main(args: Array[String]): Unit = {
     // global parameters
     Logger.getLogger("org").setLevel(Level.ERROR)

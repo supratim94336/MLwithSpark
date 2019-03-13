@@ -7,7 +7,7 @@ import org.apache.spark.ml.feature.{VectorAssembler,StringIndexer,OneHotEncoderE
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 
-object LogisticRegression2 {
+object LogisticRegression2 extends java.io.Serializable {
   def main(args: Array[String]): Unit = {
     // global parameters
     Logger.getLogger("org").setLevel(Level.ERROR)

@@ -5,7 +5,7 @@ import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.clustering.{KMeans, KMeansModel}
 import org.apache.spark.ml.feature.{OneHotEncoderEstimator, VectorAssembler}
 
-object Clustering2 {
+object Clustering2 extends java.io.Serializable {
   def main(args: Array[String]): Unit = {
     // global parameters
     Logger.getLogger("org").setLevel(Level.ERROR)

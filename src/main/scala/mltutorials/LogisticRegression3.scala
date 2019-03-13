@@ -9,7 +9,7 @@ import org.apache.spark.ml.Pipeline
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.sql.catalyst.expressions.Length
 
-object LogisticRegression3 {
+object LogisticRegression3 extends java.io.Serializable {
   def main(args: Array[String]): Unit = {
     // global parameters
     Logger.getLogger("org").setLevel(Level.ERROR)
