@@ -11,9 +11,9 @@ object Clustering1 extends java.io.Serializable {
     val dataPath = "../MLwithSpark/Data/sample_kmeans_data.txt"
     // create spark session
     val spark = SparkSession.builder
-      .appName("Clustering1")
-      .master("local[*]")
-      .getOrCreate()
+                            .appName("Clustering1")
+                            .master("local[*]")
+                            .getOrCreate()
     // first way of reading
     val trainSet = spark.read.format("libsvm").load(dataPath)
     // second way of reading
