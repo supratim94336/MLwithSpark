@@ -25,3 +25,11 @@ target/.history
 target/scala-2.11/resolution-cache/
 target/scala-2.11/test-classes/
 target/streams/
+.idea/MLwithSpark.iml
+project/target/config-classes/$0a303bc8e1d4741ce851.cache
+project/target/config-classes/$49fbf67e77e165042e53.cache
+project/target/config-classes/$56504913b1ace0dedd60.cache
+project/target/config-classes/$920bb7a87261f8218eef.cache
+project/target/config-classes/$a5ea6530fcbf24cc867a.cache
+project/target/config-classes/$f29a108e21e2b19b28ce.cache
+target/scala-2.11/classes/META-INF/
