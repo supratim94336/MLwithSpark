@@ -9,8 +9,8 @@ import scala.math.sqrt
 
 object MovieSimilarities {
   // data downloaded from https://grouplens.org/datasets/movielens/20m/
-  val ratingsPath = "C:\\Users\\supratimdas\\Downloads\\ml-20m\\ml-20m\\ratings.csv"
-  val movieDescPath = "C:\\Users\\supratimdas\\Downloads\\ml-20m\\ml-20m\\movies.csv"
+  val ratingsPath = "C:\\Users\\supratimdas\\Downloads\\ml-latest-small\\ml-latest-small\\ratings.csv"
+  val movieDescPath = "C:\\Users\\supratimdas\\Downloads\\ml-latest-small\\ml-latest-small\\movies.csv"
   // custom types
   type MovieRating = (Int, Double)
   type UserRatingPair = (Int, (MovieRating, MovieRating))
@@ -63,8 +63,8 @@ object MovieSimilarities {
   }
 
   def main(args: Array[String]): Unit = {
-    Logger.getLogger("org").setLevel(Level.ERROR)
-
+    val log = Logger.getLogger("org")
+    log.setLevel(Level.ERROR)
     val spark = SparkSession.builder
                             .appName("LinearRegression")
                             .master("local[*]")
@@ -104,7 +104,7 @@ object MovieSimilarities {
     // val result: RDD[(A, C)] = rdd.mapValues(f)
     // here RDD[Int, Iterable[Double, Double]] -> RDD[Int, (Double, Int)]
     val moviePairSimilarities = moviePairRatings.mapValues(computeCosineSimilarity).cache()
-    moviePairSimilarities.foreach(println)
+//    moviePairSimilarities.foreach(println)
 
     // example
     // calculate similar movies for movie ID = 50
