@@ -9,8 +9,8 @@ import scala.math.sqrt
 
 object MovieSimilarities {
   // data downloaded from https://grouplens.org/datasets/movielens/20m/
-  val ratingsPath = "C:\\Users\\supratimdas\\Downloads\\ml-latest-small\\ml-latest-small\\ratings.csv"
-  val movieDescPath = "C:\\Users\\supratimdas\\Downloads\\ml-latest-small\\ml-latest-small\\movies.csv"
+  val ratingsPath = "C:\\Users\\supratimdas\\Downloads\\ml-20m\\ml-20m\\ratings.csv"
+  val movieDescPath = "C:\\Users\\supratimdas\\Downloads\\ml-20m\\ml-20m\\movies.csv"
   // custom types
   type MovieRating = (Int, Double)
   type UserRatingPair = (Int, (MovieRating, MovieRating))
